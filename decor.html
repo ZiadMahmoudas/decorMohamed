@@ -1,0 +1,2010 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>محمود ديكور | جبس بورد وتشطيبات فاخرة</title>
+<meta name="description" content="محمود ديكور — مقاول جبس بورد وتشطيبات فاخرة. أسقف، ديكورات، حوائط TV، إضاءة مخفية، قواطع مكاتب. خدمة شقق وفيلات ومحلات ومكاتب.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+/* ======================================================
+   ROOT VARIABLES
+====================================================== */
+:root {
+  --bg:       #0d0d0d;
+  --bg2:      #141414;
+  --bg3:      #1c1c1c;
+  --card:     #1f1f1f;
+  --card2:    #272727;
+  --gold:     #c9a55a;
+  --gold-l:   #e8d09a;
+  --gold-d:   #8a6d30;
+  --gold-glow:rgba(201,165,90,0.22);
+  --off-white:#f2ede5;
+  --dim:      #7a746a;
+  --smoke:    #3a3530;
+  --red:      #e05555;
+  --green:    #4ec97a;
+  --wa:       #25d366;
+  --radius:   6px;
+  --shadow:   0 8px 40px rgba(0,0,0,.5);
+  font-size:  16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Almarai', 'Cairo', sans-serif;
+  background: var(--bg);
+  color: var(--off-white);
+  direction: rtl;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--gold-d); border-radius: 2px; }
+
+/* SCROLL PROGRESS */
+#progress-bar {
+  position: fixed; top: 0; right: 0; left: 0; height: 3px;
+  background: linear-gradient(90deg, var(--gold-d), var(--gold), var(--gold-l));
+  transform-origin: right; transform: scaleX(0);
+  z-index: 9999; transition: transform .1s linear;
+}
+
+/* ======================================================
+   UTILITIES
+====================================================== */
+.container { max-width: 1220px; margin: 0 auto; padding: 0 5%; }
+.s-tag {
+  display: inline-block;
+  font-size: .7rem; font-weight: 700; letter-spacing: 3px;
+  text-transform: uppercase; color: var(--gold);
+  border: 1px solid rgba(201,165,90,.25); padding: 5px 14px; border-radius: 20px;
+  margin-bottom: 16px;
+}
+.s-title {
+  font-family: 'Cairo', sans-serif;
+  font-size: clamp(1.9rem, 3.5vw, 2.9rem);
+  font-weight: 900; color: var(--off-white); line-height: 1.2;
+}
+.s-title .g { color: var(--gold); }
+.s-desc {
+  font-size: 1rem; color: var(--dim); line-height: 1.95;
+  max-width: 560px; margin-top: 14px;
+}
+.s-head { margin-bottom: 56px; }
+
+/* REVEAL ANIMATIONS */
+.rv, .rv2, .rv3 {
+  opacity: 0; transform: translateY(36px);
+  transition: opacity .75s ease, transform .75s ease;
+}
+.rv2 { transition-delay: .12s; }
+.rv3 { transition-delay: .24s; }
+.rv.vis, .rv2.vis, .rv3.vis { opacity: 1; transform: translateY(0); }
+.rv-left { opacity: 0; transform: translateX(-36px); transition: opacity .75s ease, transform .75s ease; }
+.rv-left.vis { opacity: 1; transform: translateX(0); }
+
+section { padding: 96px 0; }
+
+/* GOLD LINE DIVIDER */
+.gold-line {
+  width: 56px; height: 3px;
+  background: linear-gradient(90deg, var(--gold-d), var(--gold));
+  border-radius: 2px; margin: 20px 0;
+}
+
+/* ======================================================
+   NAVIGATION
+====================================================== */
+#nav {
+  position: fixed; top: 0; inset-inline: 0; z-index: 200;
+  padding: 18px 5%;
+  display: flex; align-items: center; justify-content: space-between;
+  transition: all .4s ease;
+}
+#nav.scrolled {
+  background: rgba(13,13,13,.96);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(201,165,90,.1);
+  padding: 14px 5%;
+  box-shadow: 0 4px 24px rgba(0,0,0,.4);
+}
+.nav-logo {
+  font-family: 'Cairo', sans-serif;
+  font-weight: 900; font-size: 1.3rem;
+  color: var(--off-white); text-decoration: none;
+  display: flex; align-items: center; gap: 10px;
+}
+.nav-logo-icon {
+  width: 36px; height: 36px;
+  background: var(--gold); border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .9rem; color: var(--bg);
+  box-shadow: 0 4px 16px var(--gold-glow);
+}
+.nav-logo span { color: var(--gold); }
+.nav-links {
+  display: flex; gap: 26px; list-style: none; align-items: center;
+}
+.nav-links a {
+  font-size: .85rem; font-weight: 700;
+  color: var(--dim); text-decoration: none;
+  transition: color .2s; position: relative;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--off-white); }
+.nav-links a.active::after {
+  content: ''; position: absolute; bottom: -4px;
+  right: 0; left: 0; height: 2px;
+  background: var(--gold); border-radius: 1px;
+}
+.nav-cta {
+  display: flex; align-items: center; gap: 8px;
+  background: var(--wa); color: #fff;
+  padding: 10px 22px; border-radius: 5px;
+  font-weight: 800; font-size: .85rem; text-decoration: none;
+  transition: all .2s; white-space: nowrap;
+}
+.nav-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,.3); }
+.hamburger {
+  display: none; flex-direction: column; gap: 5px;
+  cursor: pointer; background: none; border: none; padding: 4px;
+}
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--off-white); transition: all .3s; }
+.hamburger.open span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+
+/* MOBILE SIDEBAR MENU */
+.mob-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 799;
+  background: rgba(0, 0, 0, .55);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .35s ease, visibility .35s ease;
+}
+
+.mob-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mob-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(86vw, 360px);
+  z-index: 800;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0;
+
+  padding: 86px 22px 26px;
+  background:
+    linear-gradient(180deg, rgba(201,165,90,.08), transparent 34%),
+    rgba(13,13,13,.98);
+  border-left: 1px solid rgba(201,165,90,.16);
+  box-shadow: -18px 0 45px rgba(0,0,0,.45);
+  backdrop-filter: blur(20px);
+
+  transform: translateX(105%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    transform .45s cubic-bezier(.22, 1, .36, 1),
+    opacity .25s ease,
+    visibility .45s ease;
+}
+
+.mob-menu.open {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mob-menu a {
+  font-family: 'Cairo', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--off-white);
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 15px 4px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+
+  opacity: 0;
+  transform: translateX(24px);
+  transition:
+    color .2s ease,
+    transform .35s ease,
+    opacity .35s ease,
+    padding .2s ease;
+}
+
+.mob-menu.open a {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.mob-menu.open a:nth-child(2) { transition-delay: .08s; }
+.mob-menu.open a:nth-child(3) { transition-delay: .12s; }
+.mob-menu.open a:nth-child(4) { transition-delay: .16s; }
+.mob-menu.open a:nth-child(5) { transition-delay: .20s; }
+.mob-menu.open a:nth-child(6) { transition-delay: .24s; }
+.mob-menu.open a:nth-child(7) { transition-delay: .28s; }
+.mob-menu.open a:nth-child(8) { transition-delay: .32s; }
+.mob-menu.open a:nth-child(9) { transition-delay: .36s; }
+
+.mob-menu a::after {
+  content: '←';
+  color: var(--gold);
+  font-size: .85rem;
+  opacity: .7;
+  transition: transform .2s ease;
+}
+
+.mob-menu a:hover {
+  color: var(--gold);
+  padding-right: 10px;
+}
+
+.mob-menu a:hover::after {
+  transform: translateX(-4px);
+}
+
+.mob-close {
+  position: absolute;
+  top: 22px;
+  left: 22px;
+
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  color: var(--off-white);
+
+  font-size: 1rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: all .25s ease;
+}
+
+.mob-close:hover {
+  background: var(--gold);
+  color: var(--bg);
+  transform: rotate(90deg);
+}
+
+@media (max-width: 480px) {
+  .mob-menu {
+    width: min(88vw, 330px);
+    padding-inline: 18px;
+  }
+}
+/* ======================================================
+   HERO
+====================================================== */
+#hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex; align-items: center;
+  overflow: hidden;
+  padding: 120px 5% 80px;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=1600&q=80&auto=format');
+  background-size: cover; background-position: center;
+  z-index: 0;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(105deg, rgba(13,13,13,.96) 0%, rgba(13,13,13,.82) 55%, rgba(13,13,13,.55) 100%);
+  z-index: 1;
+}
+.hero-pattern {
+  position: absolute; inset: 0; z-index: 2;
+  background-image: radial-gradient(circle, rgba(201,165,90,.04) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.hero-content {
+  position: relative; z-index: 3; 
+  height: 100vh;
+  margin: 0 0;
+}
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 10px;
+  color: var(--gold); font-size: .72rem; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase; margin-bottom: 24px;
+  opacity: 0; animation: fadeUp .8s .2s ease both;
+}
+.hero-eyebrow::before, .hero-eyebrow::after {
+  content: ''; width: 30px; height: 1px; background: var(--gold-d); display: block;
+}
+.hero-h1 {
+  font-family: 'Cairo', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  font-weight: 900; line-height: 1.15;
+  margin-bottom: 22px;
+}
+.hero-h1 .line {
+  display: block; overflow: hidden;
+  opacity: 0; transform: translateY(110%);
+}
+.hero-h1 .line:nth-child(1) { animation: slideUp .7s .3s cubic-bezier(.25,.46,.45,.94) both; }
+.hero-h1 .line:nth-child(2) { animation: slideUp .7s .45s cubic-bezier(.25,.46,.45,.94) both; color: var(--gold); }
+.hero-h1 .line:nth-child(3) { animation: slideUp .7s .6s cubic-bezier(.25,.46,.45,.94) both; }
+.hero-sub {
+  font-size: 1.05rem; color: rgba(242,237,229,.7);
+  line-height: 1.9; max-width: 580px; margin-bottom: 40px;
+  opacity: 0; animation: fadeUp .8s .8s ease both;
+}
+.hero-btns {
+  display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 52px;
+  opacity: 0; animation: fadeUp .8s .95s ease both;
+}
+.btn-wa {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--wa); color: #fff;
+  padding: 15px 32px; border-radius: 5px;
+  font-weight: 800; font-size: .95rem; text-decoration: none;
+  transition: all .2s; border: 2px solid var(--wa);
+  position: relative; overflow: hidden;
+}
+.btn-wa::before {
+  content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.2), transparent);
+  transition: left .5s;
+}
+.btn-wa:hover::before { left: 120%; }
+.btn-wa:hover { transform: translateY(-2px); box-shadow: 0 10px 32px rgba(37,211,102,.35); }
+.btn-outline {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: transparent; color: var(--off-white);
+  padding: 15px 32px; border-radius: 5px;
+  font-weight: 700; font-size: .95rem; text-decoration: none;
+  border: 2px solid rgba(242,237,229,.2); transition: all .2s;
+}
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+/* TRUST BADGES */
+.hero-badges {
+  display: flex; flex-wrap: wrap; gap: 14px;
+  opacity: 0; animation: fadeUp .8s 1.1s ease both;
+}
+.badge {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1);
+  border-radius: 30px; padding: 8px 16px;
+  font-size: .78rem; font-weight: 700; color: rgba(242,237,229,.8);
+}
+.badge i { color: var(--gold); font-size: .8rem; }
+
+/* HERO STATS (bottom strip) */
+.hero-stats-bar {
+  position: absolute; bottom: 0; right: 0; left: 0; z-index: 3;
+  display: grid; grid-template-columns: repeat(4,1fr);
+  border-top: 1px solid rgba(201,165,90,.15);
+  background: rgba(13,13,13,.85); backdrop-filter: blur(10px);
+}
+.hstat {
+  padding: 22px 20px; text-align: center;
+  border-left: 1px solid rgba(201,165,90,.08);
+}
+.hstat:last-child { border-left: none; }
+.hstat-n {
+  font-family: 'Cairo', sans-serif;
+  font-size: 2rem; font-weight: 900; color: var(--gold);
+  display: block; line-height: 1;
+}
+.hstat-l { font-size: .75rem; color: var(--dim); margin-top: 4px; display: block; }
+
+/* ======================================================
+   SERVICES
+====================================================== */
+#services { background: var(--bg2); }
+.services-grid {
+  display: grid; grid-template-columns: repeat(3,1fr); gap: 2px;
+}
+.srv-card {
+  background: var(--card); padding: 40px 30px;
+  position: relative; overflow: hidden;
+  cursor: default; transition: background .3s;
+}
+.srv-card::after {
+  content: ''; position: absolute;
+  bottom: 0; right: 0; left: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  transform: scaleX(0); transition: transform .4s ease;
+}
+.srv-card:hover::after { transform: scaleX(1); }
+.srv-card:hover { background: rgba(201,165,90,.04); }
+.srv-img {
+  width: 100%; height: 160px; object-fit: cover; border-radius: 4px;
+  margin-bottom: 20px; transition: transform .5s ease;
+  display: block;
+}
+.srv-card:hover .srv-img { transform: scale(1.04); }
+.srv-img-wrap { overflow: hidden; border-radius: 4px; margin-bottom: 20px; }
+.srv-icon-wrap {
+  width: 52px; height: 52px;
+  background: rgba(201,165,90,.1); border: 1px solid rgba(201,165,90,.2);
+  border-radius: 10px; display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; color: var(--gold); margin-bottom: 16px;
+  transition: transform .5s ease, box-shadow .3s ease;
+}
+.srv-card:hover .srv-icon-wrap {
+  transform: rotateY(360deg);
+  box-shadow: 0 0 20px var(--gold-glow);
+}
+.srv-title {
+  font-family: 'Cairo', sans-serif; font-size: 1rem; font-weight: 800;
+  color: var(--off-white); margin-bottom: 10px;
+}
+.srv-desc { font-size: .82rem; color: var(--dim); line-height: 1.8; margin-bottom: 16px; }
+.srv-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: .78rem; font-weight: 700; color: var(--gold);
+  text-decoration: none; transition: gap .2s;
+}
+.srv-link:hover { gap: 10px; }
+.srv-num {
+  position: absolute; top: 14px; left: 16px;
+  font-family: 'Cairo', sans-serif; font-size: 3.5rem; font-weight: 900;
+  color: rgba(201,165,90,.05); line-height: 1;
+}
+
+/* ======================================================
+   PORTFOLIO
+====================================================== */
+#portfolio { background: var(--bg); }
+.pf-filters {
+  display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 36px;
+}
+.pf-filter-btn {
+  background: transparent; border: 1px solid rgba(255,255,255,.1);
+  color: var(--dim); padding: 8px 22px; border-radius: 30px;
+  font-family: 'Almarai', sans-serif; font-size: .82rem; font-weight: 700;
+  cursor: pointer; transition: all .2s;
+}
+.pf-filter-btn:hover, .pf-filter-btn.active {
+  background: var(--gold); color: var(--bg);
+  border-color: var(--gold); font-weight: 800;
+}
+.pf-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-auto-rows: 240px;
+  gap: 4px;
+}
+.pf-item {
+  position: relative; overflow: hidden; cursor: pointer;
+  background: var(--card2);
+}
+.pf-item:nth-child(1), .pf-item:nth-child(5) { grid-column: span 2; }
+.pf-img {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  transition: transform .6s cubic-bezier(.25,.46,.45,.94);
+}
+.pf-item:hover .pf-img { transform: scale(1.08); }
+.pf-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(13,13,13,.92) 0%, rgba(13,13,13,.2) 60%, transparent 100%);
+  opacity: 0; transition: opacity .35s ease;
+  display: flex; align-items: flex-end; padding: 20px;
+}
+.pf-item:hover .pf-overlay { opacity: 1; }
+.pf-info h4 {
+  font-family: 'Cairo', sans-serif; font-size: .95rem; font-weight: 800; color: var(--off-white);
+}
+.pf-info p { font-size: .75rem; color: var(--gold); margin-top: 3px; }
+.pf-zoom {
+  position: absolute; top: 14px; left: 14px;
+  width: 36px; height: 36px; background: rgba(13,13,13,.7); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gold); font-size: .8rem;
+  opacity: 0; transform: scale(.8); transition: all .3s .05s;
+}
+.pf-item:hover .pf-zoom { opacity: 1; transform: scale(1); }
+.pf-cat-badge {
+  position: absolute; top: 14px; right: 14px;
+  background: rgba(201,165,90,.9); color: var(--bg);
+  font-size: .65rem; font-weight: 800; letter-spacing: 1px;
+  padding: 4px 10px; border-radius: 20px; text-transform: uppercase;
+}
+
+/* LIGHTBOX */
+#lightbox {
+  display: none; position: fixed; inset: 0; z-index: 9999;
+  background: rgba(0,0,0,.95); align-items: center; justify-content: center;
+}
+#lightbox.open { display: flex; }
+#lb-img {
+  max-width: 90vw; max-height: 85vh;
+  object-fit: contain; border-radius: 4px;
+  animation: lbIn .3s ease;
+}
+@keyframes lbIn { from { opacity:0; transform:scale(.9); } to { opacity:1; transform:scale(1); } }
+#lb-close {
+  position: absolute; top: 20px; left: 20px;
+  background: rgba(255,255,255,.1); border: none; color: #fff;
+  width: 44px; height: 44px; border-radius: 50%; cursor: pointer;
+  font-size: 1.2rem; display: flex; align-items: center; justify-content: center;
+  transition: background .2s;
+}
+#lb-close:hover { background: var(--gold); color: var(--bg); }
+#lb-nav-prev, #lb-nav-next {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,.1); border: none; color: #fff;
+  width: 50px; height: 50px; border-radius: 50%; cursor: pointer;
+  font-size: 1.1rem; display: flex; align-items: center; justify-content: center;
+  transition: all .2s;
+}
+#lb-nav-prev { left: 20px; }
+#lb-nav-next { right: 20px; }
+#lb-nav-prev:hover, #lb-nav-next:hover { background: var(--gold); color: var(--bg); }
+#lb-caption {
+  position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+  background: rgba(0,0,0,.7); padding: 8px 20px; border-radius: 20px;
+  font-size: .85rem; color: var(--off-white); white-space: nowrap;
+}
+
+/* ======================================================
+   CALCULATOR
+====================================================== */
+#calculator { background: var(--bg2); }
+.calc-wrap {
+  background: var(--card);
+  border: 1px solid rgba(201,165,90,.18);
+  border-radius: 10px; overflow: hidden;
+}
+.calc-header {
+  padding: 40px 48px 28px;
+  border-bottom: 1px solid rgba(201,165,90,.1);
+  background: rgba(201,165,90,.03);
+}
+.calc-header h3 {
+  font-family: 'Cairo', sans-serif; font-size: 1.5rem; font-weight: 900; color: var(--off-white);
+}
+.calc-header p { font-size: .88rem; color: var(--dim); margin-top: 6px; }
+.calc-body {
+  display: grid; grid-template-columns: 1fr 360px; gap: 0;
+}
+.calc-inputs { padding: 36px 48px; border-left: 1px solid rgba(201,165,90,.08); }
+.calc-output { padding: 36px; background: rgba(201,165,90,.03); display: flex; flex-direction: column; justify-content: center; }
+.c-group { margin-bottom: 26px; }
+.c-label {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: .82rem; font-weight: 700; color: var(--off-white); margin-bottom: 10px;
+}
+.c-val { font-family: 'Cairo', sans-serif; font-size: 1.05rem; font-weight: 900; color: var(--gold); }
+.c-select, .c-input {
+  width: 100%; background: var(--card2); border: 1px solid rgba(255,255,255,.08);
+  border-radius: 5px; padding: 12px 16px; color: var(--off-white);
+  font-family: 'Almarai', sans-serif; font-size: .88rem;
+  outline: none; transition: border-color .2s; cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%237a746a' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat; background-position: left 14px center;
+}
+.c-input { background-image: none; appearance: auto; }
+.c-select:focus, .c-input:focus { border-color: var(--gold); }
+.c-select option { background: var(--card); }
+input[type="range"] {
+  -webkit-appearance: none; appearance: none;
+  width: 100%; height: 4px; border-radius: 2px; outline: none; cursor: pointer;
+  background: linear-gradient(to left, var(--gold) var(--pct, 50%), var(--smoke) var(--pct, 50%));
+}
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--gold); border: 3px solid var(--bg);
+  box-shadow: 0 0 10px var(--gold-glow); cursor: pointer;
+  transition: transform .2s;
+}
+input[type="range"]::-webkit-slider-thumb:hover { transform: scale(1.25); }
+/* ADDONS */
+.addons-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.addon-check {
+  display: flex; align-items: center; gap: 10px;
+  background: var(--card2); border: 1px solid rgba(255,255,255,.06);
+  border-radius: 5px; padding: 10px 14px; cursor: pointer;
+  transition: all .2s; user-select: none;
+}
+.addon-check.on { border-color: rgba(201,165,90,.35); background: rgba(201,165,90,.07); }
+.addon-check input { display: none; }
+.addon-check-box {
+  width: 18px; height: 18px; border-radius: 4px;
+  border: 1.5px solid rgba(255,255,255,.2); flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  transition: all .2s;
+}
+.addon-check.on .addon-check-box { background: var(--gold); border-color: var(--gold); }
+.addon-check.on .addon-check-box::after { content: '✓'; font-size: .65rem; color: var(--bg); font-weight: 900; }
+.addon-text { font-size: .78rem; color: var(--dim); }
+.addon-check.on .addon-text { color: var(--off-white); }
+/* RESULT */
+.result-label { font-size: .68rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--dim); margin-bottom: 8px; }
+.result-total { font-family: 'Cairo', sans-serif; font-size: 2.6rem; font-weight: 900; color: var(--gold); line-height: 1; }
+.result-unit { font-size: .82rem; color: var(--dim); margin-bottom: 20px; margin-top: 4px; }
+.result-breakdown { background: rgba(0,0,0,.2); border-radius: 5px; padding: 14px; margin-bottom: 18px; }
+.rb-row { display: flex; justify-content: space-between; font-size: .8rem; padding: 5px 0; border-bottom: 1px solid rgba(255,255,255,.04); }
+.rb-row:last-child { border: none; }
+.rb-l { color: var(--dim); }
+.rb-v { color: var(--off-white); font-weight: 600; }
+.result-note { font-size: .73rem; color: var(--dim); line-height: 1.65; margin-bottom: 18px; border-right: 2px solid var(--gold-d); padding-right: 10px; }
+.btn-calc-wa {
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  background: var(--wa); color: #fff; padding: 14px;
+  border-radius: 5px; font-weight: 800; font-size: .9rem;
+  text-decoration: none; transition: all .2s; border: none; cursor: pointer; width: 100%;
+  font-family: 'Almarai', sans-serif;
+}
+.btn-calc-wa:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(37,211,102,.3); }
+
+/* ======================================================
+   PROCESS / TIMELINE
+====================================================== */
+#process { background: var(--bg); }
+.timeline {
+  position: relative;
+  display: grid; grid-template-columns: repeat(6,1fr);
+  gap: 0;
+}
+.timeline::before {
+  content: ''; position: absolute;
+  top: 44px; right: 8%; left: 8%; height: 1px;
+  background: rgba(201,165,90,.12); z-index: 0;
+}
+.tl-step {
+  display: flex; flex-direction: column; align-items: center;
+  padding: 0 10px; position: relative; z-index: 1;
+}
+.tl-dot {
+  width: 88px; height: 88px; border-radius: 50%;
+  background: var(--card); border: 1px solid rgba(201,165,90,.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; margin-bottom: 18px;
+  transition: all .35s ease; position: relative;
+}
+.tl-dot-num {
+  position: absolute; top: -5px; left: -5px;
+  width: 24px; height: 24px; background: var(--gold); border-radius: 50%;
+  font-family: 'Cairo', sans-serif; font-size: .65rem; font-weight: 900;
+  color: var(--bg); display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 2px 10px var(--gold-glow);
+}
+.tl-step:hover .tl-dot {
+  border-color: var(--gold); background: rgba(201,165,90,.08);
+  transform: translateY(-5px); box-shadow: 0 12px 32px var(--gold-glow);
+}
+.tl-label { font-size: .82rem; font-weight: 700; color: var(--off-white); text-align: center; margin-bottom: 8px; }
+.tl-desc { font-size: .72rem; color: var(--dim); text-align: center; line-height: 1.6; max-height: 0; overflow: hidden; opacity: 0; transition: max-height .4s, opacity .3s; }
+.tl-step:hover .tl-desc { max-height: 80px; opacity: 1; }
+
+/* ======================================================
+   WHY CHOOSE US
+====================================================== */
+#why { background: var(--bg2); }
+.why-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.why-card {
+  background: var(--card); border: 1px solid rgba(201,165,90,.07);
+  border-radius: 8px; padding: 32px 26px;
+  transition: all .3s ease;
+}
+.why-card:hover {
+  border-color: rgba(201,165,90,.28); transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0,0,0,.3);
+}
+.why-icon {
+  width: 56px; height: 56px; border-radius: 12px;
+  background: rgba(201,165,90,.1); border: 1px solid rgba(201,165,90,.2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.4rem; color: var(--gold); margin-bottom: 18px;
+  transition: transform .5s;
+}
+.why-card:hover .why-icon { transform: rotateY(360deg); }
+.why-title { font-family: 'Cairo', sans-serif; font-size: 1rem; font-weight: 800; color: var(--off-white); margin-bottom: 8px; }
+.why-desc { font-size: .82rem; color: var(--dim); line-height: 1.8; }
+
+/* STATS ROW */
+.stats-row {
+  display: grid; grid-template-columns: repeat(4,1fr);
+  gap: 0; margin-top: 60px;
+  background: var(--card); border: 1px solid rgba(201,165,90,.1); border-radius: 8px; overflow: hidden;
+}
+.stat-item {
+  padding: 32px 20px; text-align: center;
+  border-left: 1px solid rgba(201,165,90,.08);
+  transition: background .3s;
+}
+.stat-item:last-child { border-left: none; }
+.stat-item:hover { background: rgba(201,165,90,.04); }
+.stat-num {
+  font-family: 'Cairo', sans-serif; font-size: 2.4rem; font-weight: 900;
+  color: var(--gold); line-height: 1; display: block;
+}
+.stat-lbl { font-size: .78rem; color: var(--dim); margin-top: 6px; display: block; }
+
+/* ======================================================
+   TESTIMONIALS
+====================================================== */
+#testimonials { background: var(--bg); }
+.test-bg {
+  position: relative; overflow: hidden; border-radius: 10px;
+  background: linear-gradient(135deg, var(--bg2) 0%, var(--bg3) 100%);
+  border: 1px solid rgba(201,165,90,.12); padding: 56px;
+}
+.test-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 24px; }
+.test-card {
+  background: var(--card); border-radius: 8px; padding: 28px;
+  border: 1px solid rgba(201,165,90,.06); transition: all .3s;
+}
+.test-card:hover { border-color: rgba(201,165,90,.25); transform: translateY(-3px); }
+.test-stars { color: var(--gold); font-size: .85rem; letter-spacing: 2px; margin-bottom: 14px; }
+.test-quote { font-size: .88rem; color: rgba(242,237,229,.75); line-height: 1.85; margin-bottom: 20px; font-style: italic; }
+.test-footer { display: flex; align-items: center; gap: 12px; }
+.test-avatar {
+  width: 44px; height: 44px; border-radius: 50%; overflow: hidden;
+  border: 2px solid rgba(201,165,90,.25); flex-shrink: 0;
+}
+.test-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.test-name { font-family: 'Cairo', sans-serif; font-size: .88rem; font-weight: 800; color: var(--off-white); }
+.test-role { font-size: .72rem; color: var(--gold-d); margin-top: 2px; }
+
+/* ======================================================
+   CTA BANNER
+====================================================== */
+#cta-banner {
+  background: linear-gradient(135deg, #1a1208 0%, #0d0d0d 50%, #1a1208 100%);
+  border-top: 1px solid rgba(201,165,90,.15);
+  border-bottom: 1px solid rgba(201,165,90,.15);
+  text-align: center; padding: 80px 5%;
+  position: relative; overflow: hidden;
+}
+#cta-banner::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0, rgba(201,165,90,.08) 0%, transparent 70%);
+}
+.cta-title {
+  font-family: 'Cairo', sans-serif;
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 900; color: var(--off-white); margin-bottom: 14px; position: relative;
+}
+.cta-sub { font-size: 1rem; color: var(--dim); margin-bottom: 36px; position: relative; }
+.cta-btns { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; position: relative; }
+
+/* ======================================================
+   CONTACT
+====================================================== */
+#contact { background: var(--bg2); }
+.contact-grid { display: grid; grid-template-columns: 1fr 420px; gap: 60px; align-items: start; }
+.contact-info h3 {
+  font-family: 'Cairo', sans-serif; font-size: 1rem; font-weight: 700;
+  color: var(--dim); margin-bottom: 28px;
+}
+.ct-item {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 0; border-bottom: 1px solid rgba(255,255,255,.04);
+}
+.ct-icon {
+  width: 48px; height: 48px; border-radius: 10px;
+  background: rgba(201,165,90,.08); border: 1px solid rgba(201,165,90,.15);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem; color: var(--gold); flex-shrink: 0;
+}
+.ct-label { font-size: .7rem; color: var(--dim); font-weight: 600; letter-spacing: .5px; text-transform: uppercase; margin-bottom: 3px; }
+.ct-value { font-size: .95rem; font-weight: 700; color: var(--off-white); text-decoration: none; transition: color .2s; }
+.ct-value:hover { color: var(--gold); }
+.wa-btn-big {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: var(--wa); color: #fff; padding: 17px 32px; border-radius: 6px;
+  font-weight: 800; font-size: .95rem; text-decoration: none;
+  margin-top: 28px; transition: all .2s; position: relative; overflow: hidden;
+}
+.wa-btn-big::before {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(255,255,255,.15); transform: translateX(100%); transition: transform .4s;
+}
+.wa-btn-big:hover::before { transform: translateX(-100%); }
+.wa-btn-big:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(37,211,102,.3); }
+
+/* FORM */
+.form-card {
+  background: var(--card); border: 1px solid rgba(201,165,90,.12);
+  border-radius: 8px; padding: 36px;
+}
+.form-title { font-family: 'Cairo', sans-serif; font-size: 1.2rem; font-weight: 900; color: var(--off-white); margin-bottom: 5px; }
+.form-sub { font-size: .82rem; color: var(--gold); margin-bottom: 24px; }
+.f-group { margin-bottom: 14px; }
+.f-label { display: block; font-size: .76rem; font-weight: 700; color: var(--dim); margin-bottom: 7px; }
+.f-input, .f-sel, .f-ta {
+  width: 100%; background: rgba(255,255,255,.03);
+  border: 1px solid rgba(255,255,255,.08); border-radius: 5px;
+  padding: 12px 14px; color: var(--off-white);
+  font-family: 'Almarai', sans-serif; font-size: .88rem;
+  outline: none; transition: all .25s; direction: rtl;
+}
+.f-input:focus, .f-sel:focus, .f-ta:focus {
+  border-color: var(--gold); background: rgba(201,165,90,.04);
+  box-shadow: 0 0 0 3px rgba(201,165,90,.08);
+}
+.f-sel { appearance: none; cursor: pointer; }
+.f-sel option { background: var(--card); }
+.f-ta { resize: vertical; min-height: 90px; }
+.f-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.f-submit {
+  width: 100%; background: var(--gold); color: var(--bg);
+  border: none; cursor: pointer;
+  padding: 15px; border-radius: 5px;
+  font-family: 'Almarai', sans-serif; font-size: .95rem; font-weight: 800;
+  margin-top: 6px; transition: all .2s; position: relative; overflow: hidden;
+}
+.f-submit::before {
+  content: ''; position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
+  transition: left .5s;
+}
+.f-submit:hover::before { left: 120%; }
+.f-submit:hover { background: var(--gold-l); transform: translateY(-1px); }
+
+/* ======================================================
+   FOOTER
+====================================================== */
+footer {
+  background: #080808;
+  border-top: 1px solid rgba(201,165,90,.1);
+  padding: 52px 5% 24px;
+}
+.ft-grid { display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 52px; margin-bottom: 40px; }
+.ft-logo-text {
+  font-family: 'Cairo', sans-serif; font-size: 1.35rem; font-weight: 900;
+  color: var(--off-white); margin-bottom: 12px;
+}
+.ft-logo-text span { color: var(--gold); }
+.ft-tagline { font-size: .85rem; color: var(--dim); line-height: 1.8; max-width: 280px; }
+.ft-phone { margin-top: 14px; font-size: .85rem; color: var(--gold); font-weight: 700; }
+.ft-h { font-family: 'Cairo', sans-serif; font-size: .78rem; font-weight: 800; color: var(--dim); letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 18px; }
+.ft-list { list-style: none; }
+.ft-list li { margin-bottom: 10px; }
+.ft-list a {
+  font-size: .84rem; color: var(--dim); text-decoration: none; transition: color .2s;
+  display: flex; align-items: center; gap: 8px;
+}
+.ft-list a::before { content: '→'; font-size: .7rem; color: var(--gold-d); }
+.ft-list a:hover { color: var(--gold); }
+.ft-bottom {
+  border-top: 1px solid rgba(255,255,255,.04); padding-top: 20px;
+  display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+}
+.ft-copy { font-size: .76rem; color: var(--smoke); }
+.ft-copy span { color: var(--gold); }
+.ft-wa-link {
+  display: flex; align-items: center; gap: 8px;
+  background: rgba(37,211,102,.1); border: 1px solid rgba(37,211,102,.2);
+  color: var(--wa); padding: 8px 20px; border-radius: 5px;
+  text-decoration: none; font-size: .82rem; font-weight: 700; transition: background .2s;
+}
+.ft-wa-link:hover { background: rgba(37,211,102,.18); }
+
+/* ======================================================
+   FLOATING BUTTONS
+====================================================== */
+.float-wa {
+  position: fixed; bottom: 28px; left: 28px; z-index: 800;
+  width: 60px; height: 60px; background: var(--wa); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.5rem; text-decoration: none; color: #fff;
+  box-shadow: 0 6px 24px rgba(37,211,102,.4);
+  animation: wa-pulse 2.5s ease-in-out infinite; transition: transform .2s;
+}
+.float-wa:hover { transform: scale(1.12); }
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,.4), 0 0 0 0 rgba(37,211,102,.4); }
+  50% { box-shadow: 0 6px 32px rgba(37,211,102,.5), 0 0 0 14px rgba(37,211,102,0); }
+}
+.float-top {
+  position: fixed; bottom: 28px; right: 28px; z-index: 800;
+  width: 46px; height: 46px; background: var(--card2);
+  border: 1px solid rgba(255,255,255,.1); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: var(--dim); font-size: 1rem;
+  opacity: 0; transform: translateY(10px); transition: all .3s; border: none;
+}
+.float-top.show { opacity: 1; transform: translateY(0); }
+.float-top:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ======================================================
+   ANIMATIONS
+====================================================== */
+@keyframes fadeUp { from { opacity:0; transform:translateY(28px); } to { opacity:1; transform:translateY(0); } }
+@keyframes slideUp { from { opacity:0; transform:translateY(110%); } to { opacity:1; transform:translateY(0); } }
+
+/* ======================================================
+   RESPONSIVE
+====================================================== */
+@media (max-width: 1024px) {
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .calc-body { grid-template-columns: 1fr; }
+  .calc-inputs { border-left: none; border-top: 1px solid rgba(201,165,90,.08); }
+  .contact-grid { grid-template-columns: 1fr; }
+  .ft-grid { grid-template-columns: 1fr 1fr; }
+  .test-grid { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links, .nav-cta { display: none; }
+  .hamburger { display: flex; }
+  section { padding: 72px 0; }
+  .hero-stats-bar { grid-template-columns: 1fr 1fr; }
+  .hstat:nth-child(2) { border-left: none; }
+  .hstat:nth-child(3), .hstat:nth-child(4) { border-top: 1px solid rgba(201,165,90,.08); }
+  .hstat:nth-child(4) { border-left: none; }
+  .services-grid { grid-template-columns: 1fr; }
+  .pf-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; }
+  .pf-item:nth-child(1), .pf-item:nth-child(5) { grid-column: span 2; }
+  .timeline { grid-template-columns: repeat(3,1fr); gap: 24px; }
+  .timeline::before { display: none; }
+  .why-grid { grid-template-columns: 1fr; }
+  .stats-row { grid-template-columns: 1fr 1fr; }
+  .stat-item:nth-child(2) { border-left: none; }
+  .stat-item:nth-child(3), .stat-item:nth-child(4) { border-top: 1px solid rgba(201,165,90,.08); }
+  .stat-item:nth-child(4) { border-left: none; }
+  .test-grid { grid-template-columns: 1fr; }
+  .ft-grid { grid-template-columns: 1fr; }
+  .calc-header { padding: 28px; }
+  .calc-inputs, .calc-output { padding: 28px; }
+  .test-bg { padding: 32px 24px; }
+  #hero { padding: 110px 5% 100px; }
+}
+@media (max-width: 480px) {
+  .hero-btns { flex-direction: column; }
+  .btn-wa, .btn-outline { justify-content: center; }
+  .pf-grid { grid-template-columns: 1fr; grid-auto-rows: 220px; }
+  .pf-item:nth-child(1), .pf-item:nth-child(5) { grid-column: span 1; }
+  .f-row { grid-template-columns: 1fr; }
+  .addons-grid { grid-template-columns: 1fr; }
+  .cta-btns { flex-direction: column; align-items: center; }
+  .hero-badges { gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ==================== PROGRESS BAR ==================== -->
+<div id="progress-bar"></div>
+
+<!-- ==================== FLOATING BUTTONS ==================== -->
+<a href="https://wa.me/201XXXXXXXXX?text=مرحباً، أريد استشارة مجانية ومعاينة" class="float-wa" target="_blank" title="تواصل على واتساب">
+  <i class="fab fa-whatsapp"></i>
+</a>
+<button class="float-top" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})" title="الأعلى">↑</button>
+
+<!-- ==================== MOBILE MENU ==================== -->
+<div class="mob-backdrop" id="mobBackdrop" onclick="closeMob()"></div>
+
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" onclick="closeMob()"><i class="fas fa-times"></i></button>
+  <a href="#services" onclick="closeMob()">الخدمات</a>
+  <a href="#portfolio" onclick="closeMob()">أعمالنا</a>
+  <a href="#calculator" onclick="closeMob()">حاسبة السعر</a>
+  <a href="#process" onclick="closeMob()">مراحل العمل</a>
+  <a href="#why" onclick="closeMob()">لماذا نحن</a>
+  <a href="#testimonials" onclick="closeMob()">آراء العملاء</a>
+  <a href="#contact" onclick="closeMob()">تواصل معنا</a>
+  <a href="https://wa.me/201XXXXXXXXX" target="_blank" style="color:var(--gold)"><i class="fab fa-whatsapp"></i> واتساب مباشر</a>
+</div>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon"><i class="fas fa-drafting-compass"></i></div>
+    محمود <span>ديكور</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">الخدمات</a></li>
+    <li><a href="#portfolio">أعمالنا</a></li>
+    <li><a href="#calculator">حاسبة السعر</a></li>
+    <li><a href="#process">مراحل العمل</a></li>
+    <li><a href="#why">لماذا نحن</a></li>
+    <li><a href="#testimonials">آراء العملاء</a></li>
+    <li><a href="#contact">تواصل</a></li>
+  </ul>
+  <a href="https://wa.me/201XXXXXXXXX" class="nav-cta" target="_blank">
+    <i class="fab fa-whatsapp"></i> واتساب مباشر
+  </a>
+<button class="hamburger" id="hamburger" onclick="openMob()" aria-label="فتح القائمة" type="button">
+  <span></span><span></span><span></span>
+</button>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content container">
+    <div class="hero-eyebrow">جبس بورد · ديكور · تشطيبات فاخرة</div>
+    <h1 class="hero-h1">
+      <span class="line">مقاول جبس بورد وديكور</span>
+      <span class="line">ينفذ شغلك باحتراف</span>
+      <span class="line">من أول متر للتسليم</span>
+    </h1>
+    <p class="hero-sub">
+      أسقف جبس بورد، ديكورات مودرن وكلاسيك، حوائط TV، إضاءة مخفية LED وتشطيبات بجودة عالية لمنازلكم ومحلاتكم ومكاتبكم في جميع أنحاء مصر.
+    </p>
+    <div class="hero-btns">
+      <a href="https://wa.me/201XXXXXXXXX?text=أريد معاينة مجانية لمشروعي" class="btn-wa" target="_blank">
+        <i class="fab fa-whatsapp"></i> اطلب معاينة مجانية
+      </a>
+      <a href="#portfolio" class="btn-outline">
+        <i class="fas fa-images"></i> شاهد أعمالنا
+      </a>
+    </div>
+    <div class="hero-badges">
+      <div class="badge"><i class="fas fa-check-circle"></i> معاينة مجانية</div>
+      <div class="badge"><i class="fas fa-broom"></i> تنفيذ نظيف ومنظم</div>
+      <div class="badge"><i class="fas fa-clock"></i> التزام بالمواعيد</div>
+      <div class="badge"><i class="fas fa-tag"></i> سعر واضح للمتر</div>
+    </div>
+  </div>
+  <div class="hero-stats-bar">
+    <div class="hstat">
+      <span class="hstat-n" data-target="200" data-suffix="+">0</span>
+      <span class="hstat-l">مشروع منجز</span>
+    </div>
+    <div class="hstat">
+      <span class="hstat-n" data-target="12" data-suffix="+">0</span>
+      <span class="hstat-l">سنة خبرة</span>
+    </div>
+    <div class="hstat">
+      <span class="hstat-n" data-target="98" data-suffix="%">0</span>
+      <span class="hstat-l">رضا العملاء</span>
+    </div>
+    <div class="hstat">
+      <span class="hstat-n">24/7</span>
+      <span class="hstat-l">متابعة ودعم</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SERVICES ==================== -->
+<section id="services">
+  <div class="container">
+    <div class="s-head rv">
+      <span class="s-tag">خدماتنا</span>
+      <h2 class="s-title">ما يميزنا — <span class="g">خدمة متكاملة</span></h2>
+      <div class="gold-line"></div>
+      <p class="s-desc">نقدم كامل أعمال الجبس بورد والديكور الداخلي بجودة هندسية لجميع الأنواع والقطاعات.</p>
+    </div>
+    <div class="services-grid">
+
+      <div class="srv-card rv">
+        <div class="srv-num">01</div>
+        <div class="srv-img-wrap">
+          <img class="srv-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75&auto=format" alt="أسقف جبس بورد" loading="lazy">
+        </div>
+        <div class="srv-icon-wrap"><i class="fas fa-layer-group"></i></div>
+        <h3 class="srv-title">أسقف جبس بورد</h3>
+        <p class="srv-desc">أسقف مستعارة كلاسيكية ومودرن بمستويات متعددة وتشكيلات جمالية احترافية مع إضاءة منسقة.</p>
+        <a href="https://wa.me/201XXXXXXXXX?text=أريد الاستفسار عن أسقف الجبس بورد" class="srv-link" target="_blank">
+          استفسر الآن <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
+
+      <div class="srv-card rv2">
+        <div class="srv-num">02</div>
+        <div class="srv-img-wrap">
+          <img class="srv-img" src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?w=600&q=75&auto=format" alt="ديكورات داخلية" loading="lazy">
+        </div>
+        <div class="srv-icon-wrap"><i class="fas fa-paint-brush"></i></div>
+        <h3 class="srv-title">ديكورات داخلية</h3>
+        <p class="srv-desc">تصميم وتنفيذ ديكورات داخلية مودرن وكلاسيك بأحدث الصيحات العالمية لشقق وفيلات ومحلات.</p>
+        <a href="https://wa.me/201XXXXXXXXX?text=أريد الاستفسار عن الديكورات الداخلية" class="srv-link" target="_blank">
+          استفسر الآن <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
+
+      <div class="srv-card rv3">
+        <div class="srv-num">03</div>
+        <div class="srv-img-wrap">
+          <img class="srv-img" src="https://images.unsplash.com/photo-1593789198777-b6a8a5e7d4c5?w=600&q=75&auto=format" alt="حوائط TV" loading="lazy">
+        </div>
+        <div class="srv-icon-wrap"><i class="fas fa-tv"></i></div>
+        <h3 class="srv-title">حوائط TV وديكور</h3>
+        <p class="srv-desc">وحدات تلفاز ديكورية متكاملة مع إضاءة LED وخامات فاخرة تناسب كل ذوق وميزانية.</p>
+        <a href="https://wa.me/201XXXXXXXXX?text=أريد الاستفسار عن حوائط TV" class="srv-link" target="_blank">
+          استفسر الآن <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
+
+      <div class="srv-card rv">
+        <div class="srv-num">04</div>
+        <div class="srv-img-wrap">
+          <img class="srv-img" src="https://images.unsplash.com/photo-1565538420870-da08ff96a207?w=600&q=75&auto=format" alt="إضاءة مخفية LED" loading="lazy">
+        </div>
+        <div class="srv-icon-wrap"><i class="fas fa-lightbulb"></i></div>
+        <h3 class="srv-title">إضاءة مخفية وسبوتات</h3>
+        <p class="srv-desc">تركيب إضاءة LED مخفية وسبوتات احترافية بالتنسيق مع الكهربائي لتحقيق أفضل تأثير بصري.</p>
+        <a href="https://wa.me/201XXXXXXXXX?text=أريد الاستفسار عن الإضاءة المخفية" class="srv-link" target="_blank">
+          استفسر الآن <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
+
+      <div class="srv-card rv2">
+        <div class="srv-num">05</div>
+        <div class="srv-img-wrap">
+          <img class="srv-img" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&q=75&auto=format" alt="قواطع مكاتب" loading="lazy">
+        </div>
+        <div class="srv-icon-wrap"><i class="fas fa-building"></i></div>
+        <h3 class="srv-title">قواطع ومكاتب</h3>
+        <p class="srv-desc">قواطع مكاتب إدارية باحترافية عالية وجبس مقاوم للصوت والرطوبة والحريق حسب المعايير الدولية.</p>
+        <a href="https://wa.me/201XXXXXXXXX?text=أريد الاستفسار عن قواطع المكاتب" class="srv-link" target="_blank">
+          استفسر الآن <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
+
+      <div class="srv-card rv3">
+        <div class="srv-num">06</div>
+        <div class="srv-img-wrap">
+          <img class="srv-img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=75&auto=format" alt="تشطيب شقق" loading="lazy">
+        </div>
+        <div class="srv-icon-wrap"><i class="fas fa-home"></i></div>
+        <h3 class="srv-title">تشطيب شقق ومحلات</h3>
+        <p class="srv-desc">تشطيب كامل من الصفر — أعمال جبس بورد، دهانات، إضاءة، تسليم جاهز بضمان على التنفيذ.</p>
+        <a href="https://wa.me/201XXXXXXXXX?text=أريد الاستفسار عن تشطيب شقتي" class="srv-link" target="_blank">
+          استفسر الآن <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PORTFOLIO ==================== -->
+<section id="portfolio">
+  <div class="container">
+    <div class="s-head rv">
+      <span class="s-tag">معرض الأعمال</span>
+      <h2 class="s-title">شغل حقيقي — <span class="g">بدون فلترة</span></h2>
+      <div class="gold-line"></div>
+      <p class="s-desc">مشاريع منفذة فعلياً من شقق وفيلات ومكاتب ومحلات — كل مشروع بتوقيع احتراف محمود.</p>
+    </div>
+    <div class="pf-filters rv2">
+      <button class="pf-filter-btn active" onclick="filterPF(this,'all')">الكل</button>
+      <button class="pf-filter-btn" onclick="filterPF(this,'ceiling')">أسقف</button>
+      <button class="pf-filter-btn" onclick="filterPF(this,'tv')">حوائط TV</button>
+      <button class="pf-filter-btn" onclick="filterPF(this,'lighting')">إضاءة</button>
+      <button class="pf-filter-btn" onclick="filterPF(this,'office')">مكاتب</button>
+      <button class="pf-filter-btn" onclick="filterPF(this,'finish')">تشطيبات</button>
+    </div>
+    <div class="pf-grid rv3" id="pfGrid">
+
+      <div class="pf-item" data-cat="ceiling"
+        data-img="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=1200&q=80&auto=format"
+        data-title="سقف مستعار مودرن بإضاءة LED" data-cat-label="أسقف">
+        <img class="pf-img" src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?w=800&q=75&auto=format" alt="سقف جبس بورد" loading="lazy">
+        <div class="pf-overlay"><div class="pf-info"><h4>سقف مستعار مودرن</h4><p>شقة فاخرة · القاهرة الجديدة</p></div></div>
+        <div class="pf-zoom"><i class="fas fa-search-plus"></i></div>
+        <span class="pf-cat-badge">أسقف</span>
+      </div>
+
+      <div class="pf-item" data-cat="tv"
+        data-img="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=1200&q=80&auto=format"
+        data-title="حائط TV ديكوري متكامل" data-cat-label="حوائط TV">
+        <img class="pf-img" src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=75&auto=format" alt="حائط تلفاز" loading="lazy">
+        <div class="pf-overlay"><div class="pf-info"><h4>حائط TV مع إضاءة جانبية</h4><p>فيلا · الشيخ زايد</p></div></div>
+        <div class="pf-zoom"><i class="fas fa-search-plus"></i></div>
+        <span class="pf-cat-badge">TV</span>
+      </div>
+
+      <div class="pf-item" data-cat="lighting"
+        data-img="https://images.unsplash.com/photo-1565538420870-da08ff96a207?w=1200&q=80&auto=format"
+        data-title="إضاءة LED مخفية متعددة المستويات" data-cat-label="إضاءة">
+        <img class="pf-img" src="https://images.unsplash.com/photo-1565538420870-da08ff96a207?w=800&q=75&auto=format" alt="إضاءة مخفية" loading="lazy">
+        <div class="pf-overlay"><div class="pf-info"><h4>إضاءة LED متعددة المستويات</h4><p>صالة استقبال · الجيزة</p></div></div>
+        <div class="pf-zoom"><i class="fas fa-search-plus"></i></div>
+        <span class="pf-cat-badge">إضاءة</span>
+      </div>
+
+      <div class="pf-item" data-cat="finish"
+        data-img="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?w=1200&q=80&auto=format"
+        data-title="تشطيب صالة متكامل" data-cat-label="تشطيبات">
+        <img class="pf-img" src="https://images.unsplash.com/photo-1600210491369-e753d80a41f3?w=800&q=75&auto=format" alt="تشطيب فاخر" loading="lazy">
+        <div class="pf-overlay"><div class="pf-info"><h4>تشطيب صالة متكامل</h4><p>شقة · مدينة نصر</p></div></div>
+        <div class="pf-zoom"><i class="fas fa-search-plus"></i></div>
+        <span class="pf-cat-badge">تشطيبات</span>
+      </div>
+
+      <div class="pf-item" data-cat="office"
+        data-img="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200&q=80&auto=format"
+        data-title="مكتب إداري بقواطع جبس" data-cat-label="مكاتب">
+        <img class="pf-img" src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=75&auto=format" alt="مكتب إداري" loading="lazy">
+        <div class="pf-overlay"><div class="pf-info"><h4>مكتب إداري بقواطع جبس</h4><p>شركة · المهندسين</p></div></div>
+        <div class="pf-zoom"><i class="fas fa-search-plus"></i></div>
+        <span class="pf-cat-badge">مكاتب</span>
+      </div>
+
+      <div class="pf-item" data-cat="ceiling"
+        data-img="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80&auto=format"
+        data-title="سقف كلاسيك بسبوتات" data-cat-label="أسقف">
+        <img class="pf-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=75&auto=format" alt="سقف كلاسيك" loading="lazy">
+        <div class="pf-overlay"><div class="pf-info"><h4>سقف كلاسيك بسبوتات</h4><p>فيلا · المقطم</p></div></div>
+        <div class="pf-zoom"><i class="fas fa-search-plus"></i></div>
+        <span class="pf-cat-badge">أسقف</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==================== LIGHTBOX ==================== -->
+<div id="lightbox">
+  <button id="lb-close" onclick="closeLB()"><i class="fas fa-times"></i></button>
+  <button id="lb-nav-prev" onclick="lbNav(-1)"><i class="fas fa-chevron-right"></i></button>
+  <img id="lb-img" src="" alt="">
+  <button id="lb-nav-next" onclick="lbNav(1)"><i class="fas fa-chevron-left"></i></button>
+  <div id="lb-caption"></div>
+</div>
+
+<!-- ==================== CALCULATOR ==================== -->
+<section id="calculator">
+  <div class="container">
+    <div class="s-head rv">
+      <span class="s-tag">تقدير التكلفة</span>
+      <h2 class="s-title">حاسبة السعر — <span class="g">تقدير فوري ومجاني</span></h2>
+      <div class="gold-line"></div>
+      <p class="s-desc">اختر نوع الخدمة والمساحة لتحصل على تقدير أولي. السعر النهائي الدقيق بعد المعاينة المجانية.</p>
+    </div>
+    <div class="calc-wrap rv2">
+      <div class="calc-header">
+        <h3>⚡ احسب تكلفة مشروعك الآن</h3>
+        <p>للمتر المربع — تكلفة تقديرية شاملة بناءً على نوع الخدمة والجودة المختارة</p>
+      </div>
+      <div class="calc-body">
+        <div class="calc-inputs">
+          <!-- SERVICE TYPE -->
+          <div class="c-group">
+            <div class="c-label"><span>نوع الخدمة</span></div>
+            <select class="c-select" id="c-service" onchange="calcUpdate()">
+              <option value="250">أسقف جبس بورد (250 ج.م./م²)</option>
+              <option value="350">حوائط TV وديكور (350 ج.م./م²)</option>
+              <option value="450">ديكور داخلي كامل (450 ج.م./م²)</option>
+              <option value="300">قواطع مكاتب (300 ج.م./م²)</option>
+              <option value="700">تشطيب كامل من الصفر (700 ج.م./م²)</option>
+            </select>
+          </div>
+          <!-- AREA SLIDER -->
+          <div class="c-group">
+            <div class="c-label">
+              <span>المساحة بالمتر المربع</span>
+              <span class="c-val"><span id="c-area-val">80</span> م²</span>
+            </div>
+            <input type="range" id="c-area" min="10" max="500" value="80" oninput="calcUpdate()">
+          </div>
+          <!-- QUALITY -->
+          <div class="c-group">
+            <div class="c-label"><span>مستوى الخامة</span></div>
+            <select class="c-select" id="c-quality" onchange="calcUpdate()">
+              <option value="1">اقتصادي (خامات قياسية)</option>
+              <option value="1.25" selected>متوسط (خامات جيدة — الأكثر طلباً)</option>
+              <option value="1.6">فاخر (خامات مستوردة)</option>
+            </select>
+          </div>
+          <!-- ADDONS -->
+          <div class="c-group">
+            <div class="c-label"><span>إضافات اختيارية</span></div>
+            <div class="addons-grid">
+              <label class="addon-check" id="ad1" onclick="toggleAddon(this,'a1')">
+                <input type="checkbox" id="a1">
+                <div class="addon-check-box"></div>
+                <span class="addon-text">💡 إضاءة LED (+80 ج.م./م²)</span>
+              </label>
+              <label class="addon-check" id="ad2" onclick="toggleAddon(this,'a2')">
+                <input type="checkbox" id="a2">
+                <div class="addon-check-box"></div>
+                <span class="addon-text">🎨 دهان فنش (+100 ج.م./م²)</span>
+              </label>
+              <label class="addon-check" id="ad3" onclick="toggleAddon(this,'a3')">
+                <input type="checkbox" id="a3">
+                <div class="addon-check-box"></div>
+                <span class="addon-text">🛡️ عزل رطوبة (+120 ج.م./م²)</span>
+              </label>
+              <label class="addon-check" id="ad4" onclick="toggleAddon(this,'a4')">
+                <input type="checkbox" id="a4">
+                <div class="addon-check-box"></div>
+                <span class="addon-text">✏️ رسمة ديكور (+150 ج.م./م²)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="calc-output">
+          <div class="result-label">إجمالي التكلفة التقديرية</div>
+          <div class="result-total" id="r-total">25,000</div>
+          <div class="result-unit">جنيه مصري</div>
+          <div class="result-breakdown">
+            <div class="rb-row"><span class="rb-l">نوع الخدمة</span><span class="rb-v" id="r-type">أسقف جبس بورد</span></div>
+            <div class="rb-row"><span class="rb-l">المساحة</span><span class="rb-v" id="r-area">80 م²</span></div>
+            <div class="rb-row"><span class="rb-l">سعر المتر</span><span class="rb-v" id="r-sqm">312 ج.م.</span></div>
+            <div class="rb-row"><span class="rb-l">الجودة</span><span class="rb-v" id="r-qual">متوسط</span></div>
+            <div class="rb-row"><span class="rb-l">الإضافات</span><span class="rb-v" id="r-add">لا يوجد</span></div>
+          </div>
+          <p class="result-note">السعر تقديري وقد يختلف بعد المعاينة حسب حالة المكان والتفاصيل المطلوبة.</p>
+          <button class="btn-calc-wa" onclick="sendCalcWA()">
+            <i class="fab fa-whatsapp"></i> أرسل التقدير على واتساب
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== PROCESS ==================== -->
+<section id="process">
+  <div class="container">
+    <div class="s-head rv" style="text-align:center">
+      <span class="s-tag">منهجية العمل</span>
+      <h2 class="s-title">كيف ننفذ مشروعك؟ — <span class="g">٦ خطوات</span> واضحة</h2>
+      <div class="gold-line" style="margin:20px auto"></div>
+    </div>
+    <div class="timeline rv2">
+      <div class="tl-step">
+        <div class="tl-dot">
+          <div class="tl-dot-num">١</div>
+          <i class="fas fa-phone-alt" style="color:var(--gold)"></i>
+        </div>
+        <div class="tl-label">استلام الطلب</div>
+        <div class="tl-desc">تواصل معنا عبر واتساب أو الهاتف وأخبرنا بنوع مشروعك ومساحته تقريباً.</div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot">
+          <div class="tl-dot-num">٢</div>
+          <i class="fas fa-map-marker-alt" style="color:var(--gold)"></i>
+        </div>
+        <div class="tl-label">معاينة المكان</div>
+        <div class="tl-desc">زيارة موقعية مجانية لتقييم الحالة الراهنة وأخذ المقاسات والتصوير.</div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot">
+          <div class="tl-dot-num">٣</div>
+          <i class="fas fa-ruler-combined" style="color:var(--gold)"></i>
+        </div>
+        <div class="tl-label">تحديد المقاسات</div>
+        <div class="tl-desc">رسم مخطط هندسي دقيق بالأبعاد والمستويات قبل البدء في أي تنفيذ.</div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot">
+          <div class="tl-dot-num">٤</div>
+          <i class="fas fa-handshake" style="color:var(--gold)"></i>
+        </div>
+        <div class="tl-label">الاتفاق والتصميم</div>
+        <div class="tl-desc">تحديد التصميم والخامات والسعر النهائي بوضوح قبل البدء — لا أسعار مفاجأة.</div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot">
+          <div class="tl-dot-num">٥</div>
+          <i class="fas fa-tools" style="color:var(--gold)"></i>
+        </div>
+        <div class="tl-label">التنفيذ الاحترافي</div>
+        <div class="tl-desc">تنفيذ نظيف ومنظم بفريق متخصص مع متابعة يومية وإشراف مستمر على الجودة.</div>
+      </div>
+      <div class="tl-step">
+        <div class="tl-dot">
+          <div class="tl-dot-num">٦</div>
+          <i class="fas fa-star" style="color:var(--gold)"></i>
+        </div>
+        <div class="tl-label">التسليم النهائي</div>
+        <div class="tl-desc">تسليم المشروع كامل جاهز مع معاينة نهائية مشتركة وضمان على التنفيذ.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WHY CHOOSE US ==================== -->
+<section id="why">
+  <div class="container">
+    <div class="s-head rv">
+      <span class="s-tag">لماذا محمود ديكور؟</span>
+      <h2 class="s-title">الفارق في <span class="g">التفاصيل</span></h2>
+      <div class="gold-line"></div>
+      <p class="s-desc">ليس مجرد شغل — بل التزام بجودة تصمد لسنوات وتجربة عميل لا تُنسى.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card rv">
+        <div class="why-icon"><i class="fas fa-broom"></i></div>
+        <h4 class="why-title">شغل نظيف ومنظم</h4>
+        <p class="why-desc">ورشة العمل نظيفة من البداية للنهاية. نلتزم بعدم إلحاق الأضرار بأثاثك وجيرانك.</p>
+      </div>
+      <div class="why-card rv2">
+        <div class="why-icon"><i class="fas fa-clock"></i></div>
+        <h4 class="why-title">التزام تام بالمواعيد</h4>
+        <p class="why-desc">جدول زمني واضح من أول يوم. نلتزم بالوقت المتفق عليه ونبلغك بأي تحديثات فورياً.</p>
+      </div>
+      <div class="why-card rv3">
+        <div class="why-icon"><i class="fas fa-gem"></i></div>
+        <h4 class="why-title">خامات لكل ميزانية</h4>
+        <p class="why-desc">نوفر خيارات من الاقتصادي للفاخر مع الحفاظ على معايير الجودة في كل المستويات.</p>
+      </div>
+      <div class="why-card rv">
+        <div class="why-icon"><i class="fas fa-drafting-compass"></i></div>
+        <h4 class="why-title">تنفيذ بالمقاسات الدقيقة</h4>
+        <p class="why-desc">كل مشروع يبدأ بمخطط هندسي دقيق — لا تخمين ولا تقريب. النتيجة تساوي التصميم بالضبط.</p>
+      </div>
+      <div class="why-card rv2">
+        <div class="why-icon"><i class="fas fa-comments"></i></div>
+        <h4 class="why-title">متابعة مستمرة مع العميل</h4>
+        <p class="why-desc">نبلغك بكل مرحلة عبر الصور. أنت دائماً على اطلاع بمستوى التقدم في مشروعك.</p>
+      </div>
+      <div class="why-card rv3">
+        <div class="why-icon"><i class="fas fa-tag"></i></div>
+        <h4 class="why-title">سعر واضح قبل البدء</h4>
+        <p class="why-desc">عرض سعر مكتوب وتفصيلي قبل أي تنفيذ — لا مفاجآت ولا إضافات غير متفق عليها.</p>
+      </div>
+    </div>
+    <!-- STATS -->
+    <div class="stats-row rv2">
+      <div class="stat-item">
+        <span class="stat-num" data-target="200" data-suffix="+">0</span>
+        <span class="stat-lbl">مشروع منجز بنجاح</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="12" data-suffix="+">0</span>
+        <span class="stat-lbl">سنة خبرة في المجال</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="150" data-suffix="+">0</span>
+        <span class="stat-lbl">عميل سعيد</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num" data-target="15" data-suffix=" محافظة">0</span>
+        <span class="stat-lbl">نطاق الخدمة</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== TESTIMONIALS ==================== -->
+<section id="testimonials">
+  <div class="container">
+    <div class="s-head rv" style="text-align:center">
+      <span class="s-tag">آراء العملاء</span>
+      <h2 class="s-title">ماذا قال عنا <span class="g">عملاؤنا؟</span></h2>
+      <div class="gold-line" style="margin:20px auto"></div>
+    </div>
+    <div class="test-bg rv2">
+      <div class="test-grid">
+        <div class="test-card">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">"شغل ممتاز من أول لحظة — المعاينة كانت سريعة والسعر واضح. السقف المستعار طلع أحسن من اللي كنت متصوره. التزموا بالميعاد تماماً ونظافة الشغل كانت غير عادية."</p>
+          <div class="test-footer">
+            <div class="test-avatar">
+              <img src="https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?w=100&q=80&auto=format" alt="محمد حسين" loading="lazy">
+            </div>
+            <div>
+              <div class="test-name">م. محمد حسين</div>
+              <div class="test-role">مالك شقة فاخرة · مدينة نصر</div>
+            </div>
+          </div>
+        </div>
+        <div class="test-card">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">"عملنا معاه محلنا التجاري وطلع بالشكل اللي كنا عايزينه بالضبط. الأسقف والإضاءة المخفية أعطوا المحل جو احترافي جداً. المبيعات زادت بعد التشطيب بشكل ملحوظ."</p>
+          <div class="test-footer">
+            <div class="test-avatar">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80&auto=format" alt="طارق الشافعي" loading="lazy">
+            </div>
+            <div>
+              <div class="test-name">أ. طارق الشافعي</div>
+              <div class="test-role">صاحب محل تجاري · المهندسين</div>
+            </div>
+          </div>
+        </div>
+        <div class="test-card">
+          <div class="test-stars">★★★★★</div>
+          <p class="test-quote">"نفذنا مكاتبنا الإدارية الجديدة مع محمود. القواطع الزجاجية والجبس بورد طلعوا بجودة عالية جداً والوقت المحدد اتحترم. هنتعامل معاه في كل مشاريعنا القادمة."</p>
+          <div class="test-footer">
+            <div class="test-avatar">
+              <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&q=80&auto=format" alt="هاني منصور" loading="lazy">
+            </div>
+            <div>
+              <div class="test-name">أ. هاني منصور</div>
+              <div class="test-role">مدير تشغيل · شركة استثمارية</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CTA BANNER ==================== -->
+<div id="cta-banner">
+  <div class="container">
+    <h2 class="cta-title rv">عايز تعرف تكلفة شغلك قبل ما تبدأ؟</h2>
+    <p class="cta-sub rv2">ابعتلنا المساحة ونوع الشغل على واتساب ونرد عليك فوراً بتقدير مجاني</p>
+    <div class="cta-btns rv3">
+      <a href="https://wa.me/201XXXXXXXXX?text=أريد تقدير سعر مشروعي" class="btn-wa" target="_blank">
+        <i class="fab fa-whatsapp"></i> ابعتلنا على واتساب
+      </a>
+      <a href="tel:01XXXXXXXXX" class="btn-outline">
+        <i class="fas fa-phone-alt"></i> أو اتصل بنا مباشرة
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== CONTACT ==================== -->
+<section id="contact">
+  <div class="container">
+    <div class="s-head rv">
+      <span class="s-tag">تواصل معنا</span>
+      <h2 class="s-title">اطلب <span class="g">معاينتك المجانية</span> الآن</h2>
+      <div class="gold-line"></div>
+      <p class="s-desc">الرد خلال أقل من ساعة — طوال أيام الأسبوع من الساعة ٨ صباحاً حتى ١٠ مساءً.</p>
+    </div>
+    <div class="contact-grid rv2">
+      <div class="contact-info">
+        <h3>محمود — مقاول جبس بورد وتشطيبات</h3>
+        <div class="ct-item">
+          <div class="ct-icon"><i class="fas fa-phone-alt"></i></div>
+          <div>
+            <div class="ct-label">الرقم المباشر</div>
+            <a href="tel:01XXXXXXXXX" class="ct-value" dir="ltr">01XX-XXXX-XXX</a>
+          </div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-icon"><i class="fab fa-whatsapp"></i></div>
+          <div>
+            <div class="ct-label">واتساب للتواصل الفوري</div>
+            <a href="https://wa.me/201XXXXXXXXX" class="ct-value" target="_blank" dir="ltr">01XX-XXXX-XXX</a>
+          </div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-icon"><i class="fas fa-clock"></i></div>
+          <div>
+            <div class="ct-label">ساعات العمل</div>
+            <div class="ct-value" style="font-size:.9rem">طوال الأسبوع · ٨ صباحاً – ١٠ مساءً</div>
+          </div>
+        </div>
+        <div class="ct-item">
+          <div class="ct-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div>
+            <div class="ct-label">نطاق الخدمة</div>
+            <div class="ct-value" style="font-size:.9rem">القاهرة · الجيزة · جميع المحافظات</div>
+          </div>
+        </div>
+        <a href="https://wa.me/201XXXXXXXXX?text=مرحباً محمود، أريد معاينة مجانية لمشروعي" class="wa-btn-big" target="_blank">
+          <i class="fab fa-whatsapp fa-lg"></i> ابدأ محادثة على واتساب
+        </a>
+      </div>
+
+      <!-- FORM -->
+      <div class="form-card rv3">
+        <h3 class="form-title">اطلب استشارتك المجانية</h3>
+        <p class="form-sub"><i class="fas fa-check-circle"></i> نرد خلال أقل من ساعة</p>
+        <div class="f-row">
+          <div class="f-group">
+            <label class="f-label">الاسم الكريم *</label>
+            <input type="text" class="f-input" id="f-name" placeholder="اسمك الكريم">
+          </div>
+          <div class="f-group">
+            <label class="f-label">رقم الهاتف *</label>
+            <input type="tel" class="f-input" id="f-phone" placeholder="01xxxxxxxxx" dir="ltr">
+          </div>
+        </div>
+        <div class="f-row">
+          <div class="f-group">
+            <label class="f-label">نوع الخدمة</label>
+            <select class="f-sel" id="f-service">
+              <option>أسقف جبس بورد</option>
+              <option>حوائط TV وديكور</option>
+              <option>ديكور داخلي كامل</option>
+              <option>قواطع مكاتب</option>
+              <option>تشطيب شقة من الصفر</option>
+              <option>تشطيب محل تجاري</option>
+              <option>تشطيب مكتب إداري</option>
+            </select>
+          </div>
+          <div class="f-group">
+            <label class="f-label">المساحة التقريبية</label>
+            <input type="text" class="f-input" id="f-area" placeholder="مثال: 100 م²">
+          </div>
+        </div>
+        <div class="f-group">
+          <label class="f-label">تفاصيل إضافية (اختياري)</label>
+          <textarea class="f-ta" id="f-details" placeholder="اكتب أي تفاصيل أو استفسارات هنا..."></textarea>
+        </div>
+        <button class="f-submit" onclick="submitForm()">
+          <i class="fab fa-whatsapp"></i> إرسال الطلب عبر واتساب
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="container">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-logo-text">محمود <span>ديكور</span></div>
+        <p class="ft-tagline">مقاول جبس بورد وتشطيبات فاخرة — من المعاينة حتى التسليم بجودة مضمونة وسعر واضح.</p>
+        <div class="ft-phone"><i class="fab fa-whatsapp"></i> 01XXXXXXXXX</div>
+      </div>
+      <div>
+        <div class="ft-h">خدماتنا</div>
+        <ul class="ft-list">
+          <li><a href="#services">أسقف جبس بورد</a></li>
+          <li><a href="#services">ديكورات داخلية</a></li>
+          <li><a href="#services">حوائط TV وإضاءة</a></li>
+          <li><a href="#services">قواطع ومكاتب</a></li>
+          <li><a href="#services">تشطيب شقق ومحلات</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="ft-h">روابط سريعة</div>
+        <ul class="ft-list">
+          <li><a href="#portfolio">معرض الأعمال</a></li>
+          <li><a href="#calculator">حاسبة السعر</a></li>
+          <li><a href="#process">مراحل العمل</a></li>
+          <li><a href="#why">لماذا نحن</a></li>
+          <li><a href="#contact">تواصل معنا</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="ft-bottom">
+      <p class="ft-copy">© 2026 <span>محمود ديكور</span>. جميع الحقوق محفوظة.</p>
+      <a href="https://wa.me/201XXXXXXXXX" class="ft-wa-link" target="_blank">
+        <i class="fab fa-whatsapp"></i> واتساب مباشر
+      </a>
+    </div>
+  </div>
+</footer>
+
+<!-- ==================== JAVASCRIPT ==================== -->
+<script>
+/* ============================================================
+   SCROLL PROGRESS BAR
+============================================================ */
+const progressBar = document.getElementById('progress-bar');
+window.addEventListener('scroll', () => {
+  const st = document.documentElement.scrollTop;
+  const sh = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  progressBar.style.transform = `scaleX(${st / sh})`;
+
+  // Top button visibility
+  const topBtn = document.getElementById('topBtn');
+  topBtn.classList.toggle('show', st > 300);
+
+  // Sticky nav
+  document.getElementById('nav').classList.toggle('scrolled', st > 50);
+
+  // Active nav link
+  document.querySelectorAll('section[id]').forEach(sec => {
+    const rect = sec.getBoundingClientRect();
+    if (rect.top <= 80 && rect.bottom >= 80) {
+      document.querySelectorAll('.nav-links a').forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === '#' + sec.id) a.classList.add('active');
+      });
+    }
+  });
+});
+
+/* ============================================================
+   SCROLL REVEAL (Intersection Observer)
+============================================================ */
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('vis');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+document.querySelectorAll('.rv, .rv2, .rv3, .rv-left').forEach(el => revealObs.observe(el));
+
+/* ============================================================
+   COUNTER ANIMATION
+============================================================ */
+const counterObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target;
+    const target = parseInt(el.dataset.target);
+    const suffix = el.dataset.suffix || '';
+    let current = 0;
+    const duration = 2000;
+    const stepTime = 16;
+    const steps = duration / stepTime;
+    const increment = target / steps;
+    const timer = setInterval(() => {
+      current = Math.min(current + increment, target);
+      el.textContent = Math.round(current) + suffix;
+      if (current >= target) { clearInterval(timer); el.textContent = target + suffix; }
+    }, stepTime);
+    counterObs.unobserve(el);
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('[data-target]').forEach(el => counterObs.observe(el));
+
+/* ============================================================
+   MOBILE MENU
+============================================================ */
+/* ============================================================
+   MOBILE SIDEBAR MENU
+============================================================ */
+const mobMenu = document.getElementById('mobMenu');
+const mobBackdrop = document.getElementById('mobBackdrop');
+const hamburger = document.getElementById('hamburger');
+
+function openMob() {
+  mobMenu.classList.add('open');
+  mobBackdrop.classList.add('open');
+  hamburger.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMob() {
+  mobMenu.classList.remove('open');
+  mobBackdrop.classList.remove('open');
+  hamburger.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape' && mobMenu.classList.contains('open')) {
+    closeMob();
+  }
+});
+
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 768 && mobMenu.classList.contains('open')) {
+    closeMob();
+  }
+});
+
+/* ============================================================
+   PORTFOLIO FILTER
+============================================================ */
+function filterPF(btn, cat) {
+  document.querySelectorAll('.pf-filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.pf-item').forEach(item => {
+    const show = cat === 'all' || item.dataset.cat === cat;
+    item.style.display = show ? '' : 'none';
+    if (show) {
+      item.style.animation = 'none';
+      item.offsetHeight; // reflow
+      item.style.animation = 'fadeUp .4s ease';
+    }
+  });
+}
+
+/* ============================================================
+   LIGHTBOX
+============================================================ */
+let lbItems = [];
+let lbIndex = 0;
+
+function buildLBItems() {
+  lbItems = Array.from(document.querySelectorAll('.pf-item')).map(item => ({
+    img: item.dataset.img,
+    title: item.dataset.title
+  }));
+}
+buildLBItems();
+
+document.querySelectorAll('.pf-item').forEach((item, i) => {
+  item.addEventListener('click', () => openLB(i));
+});
+
+function openLB(i) {
+  lbIndex = i;
+  const lb = document.getElementById('lightbox');
+  document.getElementById('lb-img').src = lbItems[i].img;
+  document.getElementById('lb-caption').textContent = lbItems[i].title;
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLB() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function lbNav(dir) {
+  const visible = lbItems;
+  lbIndex = ((lbIndex + dir) + visible.length) % visible.length;
+  document.getElementById('lb-img').src = visible[lbIndex].img;
+  document.getElementById('lb-caption').textContent = visible[lbIndex].title;
+}
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) closeLB();
+});
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'Escape') closeLB();
+  if (e.key === 'ArrowLeft') lbNav(1);
+  if (e.key === 'ArrowRight') lbNav(-1);
+});
+
+/* ============================================================
+   CALCULATOR
+============================================================ */
+const qualityLabels = { '1': 'اقتصادي', '1.25': 'متوسط', '1.6': 'فاخر' };
+const serviceNames = {
+  '250': 'أسقف جبس بورد',
+  '350': 'حوائط TV وديكور',
+  '450': 'ديكور داخلي كامل',
+  '300': 'قواطع مكاتب',
+  '700': 'تشطيب كامل من الصفر'
+};
+
+function calcUpdate() {
+  const basePrice = parseInt(document.getElementById('c-service').value);
+  const area = parseInt(document.getElementById('c-area').value);
+  const quality = parseFloat(document.getElementById('c-quality').value);
+  const led = document.getElementById('a1').checked;
+  const paint = document.getElementById('a2').checked;
+  const moisture = document.getElementById('a3').checked;
+  const design = document.getElementById('a4').checked;
+
+  // Update area display and slider fill
+  document.getElementById('c-area-val').textContent = area;
+  const slider = document.getElementById('c-area');
+  const pct = ((area - 10) / (500 - 10)) * 100;
+  slider.style.setProperty('--pct', pct + '%');
+
+  let pricePerMeter = basePrice * quality;
+  let addons = 0;
+  const addonParts = [];
+  if (led) { addons += 80; addonParts.push('LED'); }
+  if (paint) { addons += 100; addonParts.push('دهان'); }
+  if (moisture) { addons += 120; addonParts.push('عزل'); }
+  if (design) { addons += 150; addonParts.push('رسمة'); }
+
+  pricePerMeter += addons;
+  const total = Math.round((pricePerMeter * area) / 500) * 500;
+
+  document.getElementById('r-total').textContent = total.toLocaleString('ar-EG');
+  document.getElementById('r-type').textContent = serviceNames[String(basePrice)];
+  document.getElementById('r-area').textContent = area + ' م²';
+  document.getElementById('r-sqm').textContent = Math.round(pricePerMeter) + ' ج.م.';
+  document.getElementById('r-qual').textContent = qualityLabels[String(quality)];
+  document.getElementById('r-add').textContent = addonParts.length ? addonParts.join(' + ') : 'لا يوجد';
+}
+
+function toggleAddon(label, checkId) {
+  const cb = document.getElementById(checkId);
+  cb.checked = !cb.checked;
+  label.classList.toggle('on', cb.checked);
+  calcUpdate();
+}
+
+// Init calculator
+calcUpdate();
+
+function sendCalcWA() {
+  const service = document.getElementById('c-service');
+  const serviceText = service.options[service.selectedIndex].text;
+  const area = document.getElementById('c-area').value;
+  const quality = document.getElementById('c-quality');
+  const qualityText = quality.options[quality.selectedIndex].text;
+  const total = document.getElementById('r-total').textContent;
+  const addons = document.getElementById('r-add').textContent;
+
+  const msg = `مرحباً محمود 👋\n\nلدي استفسار عن مشروع:\n• الخدمة: ${serviceText}\n• المساحة: ${area} م²\n• الجودة: ${qualityText}\n• الإضافات: ${addons}\n• التكلفة التقديرية: ${total} ج.م.\n\nأريد معاينة مجانية لتأكيد السعر النهائي.`;
+  window.open('https://wa.me/201XXXXXXXXX?text=' + encodeURIComponent(msg), '_blank');
+}
+
+/* ============================================================
+   CONTACT FORM
+============================================================ */
+function submitForm() {
+  const name = document.getElementById('f-name').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  const service = document.getElementById('f-service').value;
+  const area = document.getElementById('f-area').value.trim();
+  const details = document.getElementById('f-details').value.trim();
+
+  if (!name || !phone) {
+    alert('من فضلك أدخل اسمك ورقم هاتفك للتواصل معك.');
+    return;
+  }
+
+  const msg = `مرحباً محمود 👋\n\nطلب معاينة جديد:\n• الاسم: ${name}\n• رقم الهاتف: ${phone}\n• الخدمة المطلوبة: ${service}\n• المساحة: ${area || 'لم تُحدد'}${details ? '\n• تفاصيل: ' + details : ''}\n\nأرجو التواصل معي لترتيب موعد المعاينة المجانية.`;
+  window.open('https://wa.me/201XXXXXXXXX?text=' + encodeURIComponent(msg), '_blank');
+}
+
+/* ============================================================
+   LAZY LOADING (native + observer fallback)
+============================================================ */
+// Native lazy loading is set via loading="lazy" attribute
+// Additional: add fade-in when images load
+document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+  img.style.opacity = '0';
+  img.style.transition = 'opacity .5s ease';
+  if (img.complete) {
+    img.style.opacity = '1';
+  } else {
+    img.addEventListener('load', () => { img.style.opacity = '1'; });
+  }
+});
+</script>
+<script>
+
+(function() {
+    'use strict';
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'F12' || e.keyCode === 123) {
+            e.preventDefault();
+            return false;
+        }
+
+        if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) {
+            e.preventDefault();
+            return false;
+        }
+
+   if (e.ctrlKey && (e.key === 'u' || e.keyCode === 85)) {
+        e.preventDefault();
+        return false;
+    }
+    });
+
+    const devToolsCheck = function() {
+        if (window.console && window.console.time) {
+                (function() {
+                    (function() {
+                        debugger;
+                    }).apply(this, ['alwaysOn']);
+                })();
+         
+        }
+    };
+    
+
+    setInterval(devToolsCheck, 1000);
+
+
+    document.addEventListener('copy', function(e) {
+        e.preventDefault();
+    });
+
+})();
+</script>
+</body>
+</html>
